@@ -1,0 +1,75 @@
+import React from 'react';
+import { Users, Target, Zap } from 'lucide-react';
+
+
+const About: React.FC = () => {
+  return (
+    <div className="bg-gray-100">
+      <section className="py-20 bg-blue-600 text-white">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold mb-4">About MAKE DIGITAL AGENCIES</h1>
+          <p className="text-xl">Empowering businesses through innovative digital marketing solutions</p>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+              <p className="text-gray-600 mb-4">
+                Founded in 2020, MAKE DIGITAL AGENCIES was born out of a passion for helping small to medium-sized businesses thrive in the digital landscape. Our team of experts combines years of experience in digital marketing, web development, and business strategy to deliver tailored solutions that drive real results.
+              </p>
+              <p className="text-gray-600">
+                We believe that every business, regardless of size, deserves access to top-tier digital marketing expertise. Our mission is to level the playing field, giving our clients the tools and strategies they need to compete and succeed in today's fast-paced digital world.
+              </p>
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Team collaboration" className="rounded-lg shadow-md" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: <Users className="h-12 w-12 text-blue-600 mb-4" />, title: 'Client-Centric Approach', description: "We put our clients' needs first, tailoring our strategies to their unique goals and challenges." },
+              { icon: <Target className="h-12 w-12 text-blue-600 mb-4" />, title: 'Results-Driven', description: "Our focus is on delivering measurable results that contribute to our clients' business growth." },
+              { icon: <Zap className="h-12 w-12 text-blue-600 mb-4" />, title: 'Innovation', description: 'We stay ahead of the curve, constantly adapting to the latest digital trends and technologies.' }
+            ].map((value, index) => (
+              <div key={index} className="text-center p-6">
+                {value.icon}
+                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { name: 'Sarah Johnson', role: 'Founder & CEO', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80' },
+              { name: 'Michael Chen', role: 'Head of Digital Strategy', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80' },
+              { name: 'Emily Rodriguez', role: 'Creative Director', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80' }
+            ].map((member, index) => (
+              <div key={index} className="text-center">
+                <img src={member.image} alt={member.name} className="w-48 h-48 rounded-full mx-auto mb-4 object-cover" />
+                <h3 className="text-xl font-semibold">{member.name}</h3>
+                <p className="text-gray-600">{member.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default About;
